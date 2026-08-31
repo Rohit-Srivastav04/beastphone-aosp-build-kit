@@ -1,5 +1,18 @@
 # BeastPhone AOSP Build Kit
 
+<div align="center">
+
+[![BeastBrowser](https://img.shields.io/badge/Project-BeastBrowser-0ea5e9?style=for-the-badge&logo=google-chrome&logoColor=white)](https://beastbrowser.com)
+[![Android](https://img.shields.io/badge/Android-14_AOSP-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://source.android.com/)
+[![Platform](https://img.shields.io/badge/Runtime-crosvm%20%2B%20WHPX-0078D6?style=for-the-badge&logo=windows&logoColor=white)
+[![License](https://img.shields.io/badge/License-AOSP_artifacts-AOSP?style=for-the-badge)](https://source.android.com/docs/setup/about/licenses)
+
+**Build reproducible Android guest images for BeastPhone on Windows**
+
+[Website](https://beastbrowser.com) · [Issues](https://github.com/Rohit-Srivastav04/beastphone-aosp-build-kit/issues) · [Maintainer @Rohit-Srivastav04](https://github.com/Rohit-Srivastav04)
+
+</div>
+
 > **Project:** [BeastBrowser](https://beastbrowser.com) — BeastPhone Android guest runtime  
 > **Made by:** Rohit Srivastav · [GitHub @Rohit-Srivastav04](https://github.com/Rohit-Srivastav04)
 
