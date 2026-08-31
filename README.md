@@ -2,14 +2,16 @@
 
 <div align="center">
 
-[![BeastBrowser](https://img.shields.io/badge/Project-BeastBrowser-0ea5e9?style=for-the-badge&logo=google-chrome&logoColor=white)](https://beastbrowser.com)
-[![Android](https://img.shields.io/badge/Android-14_AOSP-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://source.android.com/)
-[![Platform](https://img.shields.io/badge/Runtime-crosvm%20%2B%20WHPX-0078D6?style=for-the-badge&logo=windows&logoColor=white)
-[![License](https://img.shields.io/badge/License-AOSP_artifacts-AOSP?style=for-the-badge)](https://source.android.com/docs/setup/about/licenses)
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0ea5e9,50:6366f1,100:7c3aed&height=120&section=header&text=BeastPhone%20AOSP%20Build%20Kit&fontSize=38&fontColor=ffffff&desc=Android%20guest%20images%20for%20BeastBrowser&descSize=16&descAlign=center&animation=fadeIn" alt="BeastPhone AOSP Build Kit" />
 
-**Build reproducible Android guest images for BeastPhone on Windows**
+<br/>
 
-[Website](https://beastbrowser.com) · [Issues](https://github.com/Rohit-Srivastav04/beastphone-aosp-build-kit/issues) · [Maintainer @Rohit-Srivastav04](https://github.com/Rohit-Srivastav04)
+[![BeastBrowser](https://img.shields.io/badge/Project-BeastBrowser-0ea5e9?style=for-the-badge&labelColor=0b1220&logo=googlechrome&logoColor=white)](https://beastbrowser.com)
+[![Android](https://img.shields.io/badge/Android-14_AOSP-22d3ee?style=for-the-badge&labelColor=0b1220&logo=android&logoColor=0b1220)](https://source.android.com/)
+[![Runtime](https://img.shields.io/badge/Runtime-crosvm%20%2B%20WHPX-6366f1?style=for-the-badge&labelColor=0b1220&logo=windows&logoColor=white)](https://beastbrowser.com)
+[![Maintainer](https://img.shields.io/badge/Maintainer-Rohit_Srivastav-7c3aed?style=for-the-badge&labelColor=0b1220&logo=github&logoColor=white)](https://github.com/Rohit-Srivastav04)
+
+[Website](https://beastbrowser.com) · [Issues](https://github.com/Rohit-Srivastav04/beastphone-aosp-build-kit/issues) · [Profile](https://github.com/Rohit-Srivastav04)
 
 </div>
 
