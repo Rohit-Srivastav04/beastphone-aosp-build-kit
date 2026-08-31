@@ -1,0 +1,2 @@
+# android-14-r67-v3-super tarball checksum
+beastphone-android-guest-v3-super.tar.gz 49d63806e6c1a8f8b47b0ffef8d734a962a959bb8d7e8480438c723d8683509b

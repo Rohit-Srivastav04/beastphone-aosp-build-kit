@@ -1,0 +1,27 @@
+BeastPhone Android Guest Export (v3 super+metadata)
+date: 2026-08-31T08:05:18+00:00
+aosp_tag: android-14.0.0_r67
+emu64x_super: /home/anshul/aosp/out/target/product/emu64x/super.img
+metadata_source: mkuserimg_mke2fs_16mb_ext4
+
+=== sizes ===
+20M	/home/anshul/beastphone-export/kernel/bzImage
+1.5G	/home/anshul/beastphone-export/super/super.img
+4.2M	/home/anshul/beastphone-export/metadata/metadata.img
+4.3M	/home/anshul/beastphone-export/initrd/initrd.img
+8.0K	/home/anshul/beastphone-export/vbmeta/vbmeta.img
+
+=== sha256 ===
+b7c3dc7cce8acf1dbec1cb5da1afa1075cfe7f21af9b27beb350f59f935fc542  /home/anshul/beastphone-export/kernel/bzImage
+b164fa49e36637e970faa9c24724e34b4ccdb0eccf3933b71d2e85a46fa73c4f  /home/anshul/beastphone-export/super/super.img
+3c0a11aef658f6a9d71f78fc18e242b64ab451902d031bc2343b182157ae234f  /home/anshul/beastphone-export/metadata/metadata.img
+822c9bd3aaf3361d3066e405803c368dd7f5c9a5e16935ee78f2201744cf9f4e  /home/anshul/beastphone-export/initrd/initrd.img
+1a3a0e278af430c2b5467b0a895a8dae862ca285797250b09bccdb4d20db6e96  /home/anshul/beastphone-export/vbmeta/vbmeta.img
+
+=== file(1) ===
+/home/anshul/beastphone-export/kernel/bzImage:        Linux kernel x86 boot executable bzImage, version 6.6.9-android15-0-g515a956763d8-ab11275718 (build-user@build-host) #1 SMP PREEMPT Thu Jan  4 21:38:14 UTC 2024, RO-rootFS, swap_dev 0X13, Normal VGA
+/home/anshul/beastphone-export/super/super.img:       data
+/home/anshul/beastphone-export/metadata/metadata.img: Linux rev 1.0 ext4 filesystem data, UUID=bfbbcf76-5f83-4d09-b362-32b7919732f2 (extents) (large files) (huge files)
+/home/anshul/beastphone-export/initrd/initrd.img:     ASCII cpio archive (SVR4 with no CRC)
+/home/anshul/beastphone-export/vbmeta/vbmeta.img:     data
+49d63806e6c1a8f8b47b0ffef8d734a962a959bb8d7e8480438c723d8683509b  /home/anshul/beastphone-android-guest-v3-super.tar.gz

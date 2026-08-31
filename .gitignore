@@ -15,6 +15,7 @@ beastphone-export/
 .export-done
 .gsi-done
 .initrd-export-done
+.v3-export-done
 .handoff.lock
 .sync-done
 
