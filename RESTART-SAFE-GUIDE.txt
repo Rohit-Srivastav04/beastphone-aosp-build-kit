@@ -1,0 +1,70 @@
+# BeastPhone — Azure Restart / Resize SAFE GUIDE (Hindi+English)
+
+## Tumhara data SAFE hai — kya delete NAHI hota
+
+| Data | Location | Restart ke baad |
+|------|----------|-----------------|
+| AOSP source (~372 GB) | WSL Ubuntu disk | ✅ Same |
+| Build progress (out/) | ~/aosp/out | ✅ Same — resume with m |
+| Scripts | C:\Users\Anshul\beastphone-build\ | ✅ Same |
+| Windows files | C:\Users\Anshul\ | ✅ Same |
+
+**RDP "udd" jayega = disconnect** — yeh NORMAL hai. VM restart = RDP band, 2-5 min baad dubara connect.
+
+**RDP permanently nahi milta** jab tak:
+- VM Delete nahi karte (❌)
+- OS disk delete nahi karte (❌)
+- "Deallocate" ke baad disk delete (❌)
+
+---
+
+## SAFE: Azure Portal → Restart
+
+1. portal.azure.com → VM **Shrivastav-32core**
+2. **Restart** (NOT Delete, NOT "Discard disks")
+3. RDP disconnect — wait 3-5 min
+4. Same RDP IP/credentials se **dobara connect**
+5. Sab files wahi honge
+
+Build jo ab chal raha hai — restart par **ruk jayega**. Dubara start karna padega (script neeche).
+
+---
+
+## FAST 5-6h path: Resize + Restart (recommended)
+
+1. Azure Portal → VM → **Size**
+2. Pick **Standard_D32s_v3** (or D16s_v3) — nested virt support
+3. **Resize** (VM may stop briefly — data safe)
+4. **Start** VM if stopped
+5. RDP connect
+6. Run:
+   powershell -ExecutionPolicy Bypass -File C:\Users\Anshul\beastphone-build\FAST-AFTER-REBOOT.ps1
+
+---
+
+## Restart ke BAAD (agar sirf restart, resize nahi)
+
+PowerShell:
+```powershell
+# Resume slow build (WSL1+qemu, j28)
+wsl -d Ubuntu-22.04 -u anshul -- bash -c 'setsid bash /home/anshul/beastphone-build/run-build.sh >> /home/anshul/beastphone-build/build.log 2>&1 < /dev/null &'
+```
+
+---
+
+## Auto-start after reboot (optional — run ONCE before restart)
+
+```powershell
+powershell -ExecutionPolicy Bypass -File C:\Users\Anshul\beastphone-build\INSTALL-AUTO-RESUME.ps1
+```
+
+Phir restart ke baad build khud resume try karega.
+
+---
+
+## ❌ MAT KARNA
+
+- VM **Delete**
+- Disk **Delete**
+- "Create new VM" instead of resize
+- Poora `~/aosp` delete

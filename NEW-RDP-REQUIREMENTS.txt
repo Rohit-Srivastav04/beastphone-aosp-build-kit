@@ -1,0 +1,110 @@
+# BeastPhone AOSP Build — New RDP / VM Requirements
+# Send this list to your RDP / Azure seller.
+
+## GOAL
+Build Android 14 AOSP x86_64 guest (system.img, vendor.img, product.img, kernel/bzImage)
+in ~5–8 hours (not days).
+
+## DO NOT ORDER
+- Any B-series / Bsv2 (B16, B32, etc.) — NO nested virtualization, WSL2 fails, AOSP build painfully slow
+- Trusted Launch security type (blocks nested virt)
+- Less than 64 GB RAM
+- Less than 500 GB usable disk
+- Windows only without nested virt enabled
+
+---
+
+## OPTION A (BEST FOR BUILD ONLY) — Native Linux VM
+Prefer this if you only need to BUILD artifacts, then download tar.gz.
+
+| Item | Required value |
+|------|----------------|
+| OS | Ubuntu 22.04 LTS (x86_64) |
+| Azure size | Standard_D32s_v5 (or D16s_v5 minimum) |
+| vCPU | 32 preferred (16 minimum) |
+| RAM | 128 GB preferred (64 GB minimum) |
+| Disk | 512 GB–1 TB Premium SSD (P40+) |
+| Nested virt | NOT needed (native Linux) |
+| Region | Same as you (e.g. Central US) |
+| Access | SSH + optional XRDP if you want desktop |
+
+Quota needed: Standard DSv5 Family vCPUs ≥ 32 in that region.
+
+---
+
+## OPTION B (WINDOWS RDP + FAST BUILD) — Needs nested virt
+Use this if you want Windows RDP AND build on same machine via WSL2.
+
+| Item | Required value |
+|------|----------------|
+| OS | Windows 11 Pro / Windows Server 2022 |
+| Azure size | Standard_D32s_v5 (or D16s_v5 min) |
+| Nested Virtualization | MUST be Supported + ENABLED |
+| Security type | Standard (NOT Trusted Launch) |
+| Generation | Gen 2 |
+| vCPU | 32 preferred |
+| RAM | 128 GB preferred (64 GB min) |
+| Disk | 512 GB–1 TB Premium SSD |
+| Quota | DSv5 Family vCPUs ≥ 32 |
+
+### Windows features that MUST work after login
+1. Hyper-V (or at least hypervisor present for WSL2)
+2. Virtual Machine Platform = Enabled
+3. Windows Subsystem for Linux = Enabled
+4. WSL2 works: `wsl -l -v` shows VERSION 2
+5. Ubuntu 22.04 on WSL2
+6. (Optional for BeastPhone crosvm later) Windows Hypervisor Platform
+
+### Seller must verify BEFORE handing over
+```
+systeminfo | findstr /i "Hyper-V"
+# VirtualizationFirmwareEnabled should effectively allow nested guests
+
+wsl --status
+wsl -l -v
+# Ubuntu must show VERSION 2, not 1
+```
+
+Inside Ubuntu WSL2:
+```
+uname -r
+# Must be a real Linux kernel like 5.x/6.x, NOT "Microsoft" WSL1 kernel 4.4.0-*-Microsoft
+
+# AOSP prebuilts must run WITHOUT qemu:
+# (after aosp sync) ./prebuilts/clang/.../bin/clang --version
+```
+
+---
+
+## HARDWARE CHECKLIST (both options)
+From Google AOSP docs + our BeastPhone needs:
+
+- [ ] 64-bit x86_64
+- [ ] RAM ≥ 64 GB (128 GB better for -j28)
+- [ ] Free disk ≥ 500 GB (source ~250–350 GB + out ~150–200 GB)
+- [ ] Premium SSD (not slow HDD)
+- [ ] Stable internet (repo sync ~100+ GB)
+- [ ] Admin / sudo access
+- [ ] Machine stays ON for 6–12 hours (no auto-shutdown)
+
+---
+
+## AZURE PORTAL SETTINGS (seller)
+1. Size: Standard_D32s_v5 (preferred) or Standard_D16s_v5
+2. Security type: Standard
+3. Nested virtualization: Enabled (Windows option only)
+4. Increase quota if greyed out: "Standard DSv5 Family vCPUs" in Central US (or your region)
+5. Do NOT pick Bsv2 / B-series
+6. Disk: Premium SSD ≥ 512 GB
+
+---
+
+## AFTER MACHINE IS READY (we will do)
+1. Install Ubuntu 22.04 (native or WSL2)
+2. Install AOSP packages + repo
+3. repo sync android-14.0.0_r67
+4. lunch aosp_x86_64-ap2a-userdebug
+5. m -j28
+6. Export beastphone-android-guest.tar.gz
+
+Expected time on D32s_v5 + native/WSL2: about 5–8 hours for full build.

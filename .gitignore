@@ -1,0 +1,33 @@
+# Secrets — NEVER commit
+rclone-auth.txt
+rclone.conf
+.env
+*.pem
+*.key
+
+# Build outputs & large artifacts
+*.tar.gz
+*.img
+beastphone-export/
+
+# Logs & runtime markers
+*.log
+.export-done
+.gsi-done
+.initrd-export-done
+.handoff.lock
+.sync-done
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Status scratch files
+00-status.txt
+HANDOFF_STATUS.txt
+
+# WSL1 legacy / experimental (not part of kit)
+qemu_trampoline.c
+clang-wsl1-driver.sh

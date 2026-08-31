@@ -1,0 +1,6 @@
+# Google Drive OAuth token for rclone — DO NOT commit real values
+# 1. Run: rclone authorize drive
+# 2. Paste the JSON blob below (or save as single-line JSON)
+# 3. python3 36-setup-rclone-drive.py
+
+{"access_token":"REPLACE","token_type":"Bearer","refresh_token":"REPLACE","expiry":"2099-01-01T00:00:00Z"}

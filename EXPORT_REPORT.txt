@@ -1,0 +1,31 @@
+BeastPhone Android Guest Export (v2 initrd)
+date: 2026-08-31T06:30:26+00:00
+gsi_system: /home/anshul/aosp/out/target/product/generic_x86_64/system.img
+emu64x_vendor: /home/anshul/aosp/out/target/product/emu64x/vendor.img
+emu64x_product: /home/anshul/aosp/out/target/product/emu64x/product.img
+ramdisk_source: vendor_boot/vendor_ramdisk00+ramdisk.img (merged generic+vendor cpio)
+
+=== sizes ===
+20M	/home/anshul/beastphone-export/kernel/bzImage
+1.9G	/home/anshul/beastphone-export/system/system.img
+98M	/home/anshul/beastphone-export/vendor/vendor.img
+312M	/home/anshul/beastphone-export/product/product.img
+4.3M	/home/anshul/beastphone-export/initrd/initrd.img
+8.0K	/home/anshul/beastphone-export/vbmeta/vbmeta.img
+
+=== sha256 ===
+b7c3dc7cce8acf1dbec1cb5da1afa1075cfe7f21af9b27beb350f59f935fc542  /home/anshul/beastphone-export/kernel/bzImage
+a79fe38f8a4de7592b292f3cf7c2d2c4ea097faabfea21eabc997b1a8dcc711f  /home/anshul/beastphone-export/system/system.img
+17c91dbd448fe09a2ceba2c172025fbb28d37ecd0654d0d90ee92eae4b6cb789  /home/anshul/beastphone-export/vendor/vendor.img
+5af2370a66449dfe6edb8c7b9d898e3f7e4673f3d8c39110515c8ffff60021a2  /home/anshul/beastphone-export/product/product.img
+822c9bd3aaf3361d3066e405803c368dd7f5c9a5e16935ee78f2201744cf9f4e  /home/anshul/beastphone-export/initrd/initrd.img
+1a3a0e278af430c2b5467b0a895a8dae862ca285797250b09bccdb4d20db6e96  /home/anshul/beastphone-export/vbmeta/vbmeta.img
+
+=== file(1) ===
+/home/anshul/beastphone-export/kernel/bzImage:      Linux kernel x86 boot executable bzImage, version 6.6.9-android15-0-g515a956763d8-ab11275718 (build-user@build-host) #1 SMP PREEMPT Thu Jan  4 21:38:14 UTC 2024, RO-rootFS, swap_dev 0X13, Normal VGA
+/home/anshul/beastphone-export/system/system.img:   Linux rev 1.0 ext2 filesystem data, UUID=09d8ca3b-ed06-5029-8d43-870537797a19 (extents) (large files) (huge files)
+/home/anshul/beastphone-export/vendor/vendor.img:   Linux rev 1.0 ext2 filesystem data, UUID=9af10c1d-bfc8-509e-9293-4f3b174dbf22, volume name "vendor" (extents) (large files) (huge files)
+/home/anshul/beastphone-export/product/product.img: Linux rev 1.0 ext2 filesystem data, UUID=3cad6564-7232-569e-8b82-a62146c3bb2f, volume name "product" (extents) (large files) (huge files)
+/home/anshul/beastphone-export/initrd/initrd.img:   ASCII cpio archive (SVR4 with no CRC)
+/home/anshul/beastphone-export/vbmeta/vbmeta.img: data
+580d144fb7f92d10cb9c4b6724b2016c6b1fae81dfe5f168e424e2c29e179d0b  /home/anshul/beastphone-android-guest-v2-initrd.tar.gz

@@ -1,0 +1,2 @@
+# android-14-r67-v2-initrd tarball checksum (artifact stored on Drive / local PC)
+beastphone-android-guest-v2-initrd.tar.gz 580d144fb7f92d10cb9c4b6724b2016c6b1fae81dfe5f168e424e2c29e179d0b
